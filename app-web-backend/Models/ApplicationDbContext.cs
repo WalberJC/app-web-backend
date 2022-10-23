@@ -1,0 +1,14 @@
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace app_web_backend.Models
+{
+    public class ApplicationDbContext : DbContext
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) //Construtor da nossa classe ApplicationDbContext - ele recebe como configurações
+        {                                                                                           // as opções de banco de dados
+        }
+        public DbSet<Veiculo> Veiculos { get; set; }
+        public DbSet<Consumo> Consumos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+    }
+}
